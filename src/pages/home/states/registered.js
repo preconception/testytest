@@ -4,16 +4,16 @@ import 'antd/dist/antd.css';
 import { createContainer } from "unstated-next";
 
 export function useTestDrawerOpen() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(true)
   const openDrawer = () => setIsOpen(true)
   const closeDrawer = () => setIsOpen(false)
   return { isOpen, openDrawer, closeDrawer }
 }
 
-export const State = createContext(null)
+export const State = createContainer(useTestDrawerOpen)
 
 function TestDrawer() {
-  const state = useContext(State)
+  const state = State.useContainer()
   return (
     <Drawer
       title="Basic Drawer"

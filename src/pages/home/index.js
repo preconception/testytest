@@ -1,15 +1,14 @@
 import React, { useContext } from "react"
 import { Button } from "antd"
-import Registered, { State, useTestDrawerOpen } from "./states/registered"
+import Registered, { State } from "./states/registered"
 
 export default () => {
 
-  const state = useTestDrawerOpen()
   return (
     <>
-      <State.Provider value={state}>
+      <State.Provider>
         <Button
-          onClick={state.openDrawer}
+          onClick={"setIsOpen"}
           type="primary">
           Open
         </Button>
