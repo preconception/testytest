@@ -1,19 +1,19 @@
 import React, { useContext } from "react"
 import { Button } from "antd"
-import Registered, { State } from "./states/registered"
+import Registered from "./states/registered"
 
 export default () => {
-
   return (
-    <>
-      <State.Provider>
-        <Button
-          onClick={"setIsOpen"}
-          type="primary">
-          Open
-        </Button>
-        <Registered.TestDrawer />
-      </State.Provider>
-    </>
+    <div style={{
+      height: "100vh",
+      width: "100%",
+      background: "red",
+      display: "grid",
+      alignItems: "center",
+      justifyItems: "center"
+    }}>
+
+      <Registered.TestCard />
+    </div>
   )
 }
